@@ -5,6 +5,10 @@ class BlogPageState extends State<BlogPage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Blog'),
+      ),
+    );
   }
 }
