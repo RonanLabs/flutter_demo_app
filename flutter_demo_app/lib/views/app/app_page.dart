@@ -1,3 +1,4 @@
 class AppPage {
-  static const String blogPage = 'blog';
+  static const blogPage = 'blog';
+  static const registerPage = 'register';
 }
