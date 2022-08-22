@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-extension AppColumn on List<Widget> {
-  Widget column() {
-    return Column(
+extension AppRowExt on List<Widget> {
+  Widget row() {
+    return Row(
       mainAxisSize: MainAxisSize.max,
       children: this,
     );
