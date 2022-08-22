@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_app/extensions/icon_ext.dart';
 import 'package:flutter_demo_app/helpers/color_helper.dart';
 
 extension CircleAvatarExt on Widget {
@@ -8,10 +9,7 @@ extension CircleAvatarExt on Widget {
         backgroundColor: ColorHelper.blue,
         child: IconButton(
           onPressed: onPressed(),
-          icon: Icon(
-            Icons.camera_alt,
-            color: ColorHelper.white,
-          ),
+          icon: cameraIcon(),
         ));
   }
 }

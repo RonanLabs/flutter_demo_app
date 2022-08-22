@@ -6,22 +6,18 @@ import 'package:flutter_demo_app/extensions/padding_ext.dart';
 import 'package:flutter_demo_app/extensions/row_ext.dart';
 import 'package:flutter_demo_app/extensions/text_style_ext.dart';
 import 'package:flutter_demo_app/extensions/scaffold_ext.dart';
-import 'package:flutter_demo_app/helpers/color_helper.dart';
 import 'package:flutter_demo_app/views/app/app_page.dart';
 import 'package:flutter_demo_app/views/app/app_route_delegate.dart';
 import 'package:flutter_demo_app/views/home/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_demo_app/extensions/icon_ext.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return [
-      Icon(
-        Icons.home,
-        size: 100,
-        color: ColorHelper.blue,
-      ).padding(0, 40, 0, 20),
+      widget.homeIcon().padding(0, 40, 0, 20),
       Text(
         AppLocalizations.of(context)!.homeTitle,
         style: GoogleFonts.poppins(textStyle: widget.blue18TextStyle()),
