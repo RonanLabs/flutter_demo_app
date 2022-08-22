@@ -36,7 +36,7 @@ class AppRouteDelegate extends RouterDelegate<String>
   Page _getPage(String url) {
     final pathSegments = Uri.parse(url).pathSegments;
     final page = pathSegments.isEmpty ? url : pathSegments[0];
-    return MaterialPage(child: page.getWidget(pathSegments));
+    return MaterialPage(child: page.appWidget(pathSegments));
   }
 
   @override

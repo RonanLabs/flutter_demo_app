@@ -1,7 +1,19 @@
 {
   "helloWorld": "Hello World!",
+
   "homeTitle": "Welcome to RonanLabs",
   "homeSubtitle": "Stay in touch with your best friends",
   "homeLogIn": "Log In",
-  "homeSignUp": "Sign Up"
+  "homeSignUp": "Sign Up",
+
+  "loginSignIn": "Sign In",
+  "loginLogIn": "Log In",
+  "loginEmail": "Email",
+  "loginPassword": "Password",
+
+  "registerCreateAccount": "Create account",
+  "registerEmail": "Email",
+  "registerPassword": "Password",
+  "registerConfirmPassword": "Confirm password",
+  "registerSignUp": "Sign Up"
 }

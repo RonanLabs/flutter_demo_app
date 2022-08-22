@@ -14,7 +14,7 @@ class BlogPageState extends State<BlogPage> {
   Widget build(BuildContext context) {
     debugPrint('blog id: ${widget.id}');
     return Scaffold(
-      appBar: 'Blog'.getAppBar(),
+      appBar: widget.appBar('Blog'),
       body: Column(
         children: [Text(widget.id)],
       ),

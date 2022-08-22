@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_app/extensions/app_column_ext.dart';
-import 'package:flutter_demo_app/extensions/app_container_ext.dart';
-import 'package:flutter_demo_app/extensions/app_gesture_detector_ext.dart';
-import 'package:flutter_demo_app/extensions/app_padding_ext.dart';
-import 'package:flutter_demo_app/extensions/app_row_ext.dart';
+import 'package:flutter_demo_app/extensions/button_style_ext.dart';
+import 'package:flutter_demo_app/extensions/column_ext.dart';
+import 'package:flutter_demo_app/extensions/gesture_detector_ext.dart';
+import 'package:flutter_demo_app/extensions/padding_ext.dart';
+import 'package:flutter_demo_app/extensions/row_ext.dart';
+import 'package:flutter_demo_app/extensions/text_style_ext.dart';
+import 'package:flutter_demo_app/extensions/scaffold_ext.dart';
 import 'package:flutter_demo_app/helpers/color_helper.dart';
+import 'package:flutter_demo_app/views/app/app_page.dart';
 import 'package:flutter_demo_app/views/app/app_route_delegate.dart';
 import 'package:flutter_demo_app/views/home/home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -18,45 +21,36 @@ class HomePageState extends State<HomePage> {
         Icons.home,
         size: 100,
         color: ColorHelper.blue,
-      ),
+      ).padding(0, 40, 0, 20),
       Text(
         AppLocalizations.of(context)!.homeTitle,
-        style: GoogleFonts.poppins(
-            textStyle: TextStyle(
-                color: ColorHelper.blue, fontWeight: FontWeight.w800)),
-      ).padding(0, 20, 0, 10),
+        style: GoogleFonts.poppins(textStyle: widget.blue18TextStyle()),
+      ).padding(0, 0, 0, 20),
       Text(
         AppLocalizations.of(context)!.homeSubtitle,
-      ),
+      ).padding(0, 0, 0, 40),
       [
         Expanded(
             child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: ColorHelper.blue, shape: const StadiumBorder()),
-                onPressed: () {},
+                style: widget.blueButtonStyle(),
+                onPressed: () =>
+                    AppRouteDelegate.of(context).push('/${AppPage.loginPage}'),
                 child: Text(
                   AppLocalizations.of(context)!.homeLogIn,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                )).padding(0, 40, 0, 0))
-      ].row(),
+                  style: widget.whiteTextStyle(),
+                )))
+      ].row().padding(0, 0, 0, 20),
       [
         Expanded(
             child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  side: BorderSide(
-                    color: ColorHelper.grey,
-                    width: 1,
-                  ),
-                  shape: const StadiumBorder(),
-                ),
-                onPressed: () => AppRouteDelegate.of(context).push('/register'),
+                style: widget.greyButtonStyle(),
+                onPressed: () => AppRouteDelegate.of(context)
+                    .push('/${AppPage.registerPage}'),
                 child: Text(
                   AppLocalizations.of(context)!.homeSignUp,
-                  style: TextStyle(
-                      color: ColorHelper.blue, fontWeight: FontWeight.bold),
-                )).padding(0, 20, 0, 0))
+                  style: widget.blueTextStyle(),
+                )))
       ].row()
-    ].column().padding(20, 50, 20, 0).gestureDetector(context).rootContainer();
+    ].column().padding(20, 0, 20, 0).gestureDetector(context).scaffold();
   }
 }

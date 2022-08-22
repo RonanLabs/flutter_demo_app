@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension AppRowExt on List<Widget> {
+extension RowExt on List<Widget> {
   Widget row() {
     return Row(
       mainAxisSize: MainAxisSize.max,
