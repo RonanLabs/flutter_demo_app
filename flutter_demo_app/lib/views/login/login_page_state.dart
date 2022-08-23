@@ -3,7 +3,6 @@ import 'package:flutter_demo_app/extensions/button_style_ext.dart';
 import 'package:flutter_demo_app/extensions/column_ext.dart';
 import 'package:flutter_demo_app/extensions/icon_ext.dart';
 import 'package:flutter_demo_app/extensions/scaffold_ext.dart';
-import 'package:flutter_demo_app/extensions/edge_insets_geometry_ext.dart';
 import 'package:flutter_demo_app/extensions/gesture_detector_ext.dart';
 import 'package:flutter_demo_app/extensions/padding_ext.dart';
 import 'package:flutter_demo_app/extensions/row_ext.dart';
@@ -32,24 +31,23 @@ class LoginPageState extends State<LoginPage> {
       TextField(
               controller: emailController,
               decoration: InputDecoration(
-                  contentPadding: widget.edgeInsets(10, 0, 10, 0),
+                  isDense: true,
                   hintText: AppLocalizations.of(context)!.loginEmail,
                   enabledBorder: widget.greyOutlineInputBorder(),
                   focusedBorder: widget.greyOutlineInputBorder()))
           .padding(0, 0, 0, 20),
       TextField(
-          controller: passwordController,
-          obscureText: model.obscureText,
-          decoration: InputDecoration(
-              contentPadding: widget.edgeInsets(10, 0, 10, 0),
-              hintText: AppLocalizations.of(context)!.loginPassword,
-              enabledBorder: widget.greyOutlineInputBorder(),
-              focusedBorder: widget.greyOutlineInputBorder(),
-              suffixIcon: IconButton(
-                  icon: widget.eyeIcon(model.obscureText),
-                  onPressed: () {
-                    model.toggle();
-                  }))).padding(0, 0, 0, 40),
+              controller: passwordController,
+              obscureText: model.obscureText,
+              decoration: InputDecoration(
+                  isDense: true,
+                  hintText: AppLocalizations.of(context)!.loginPassword,
+                  enabledBorder: widget.greyOutlineInputBorder(),
+                  focusedBorder: widget.greyOutlineInputBorder(),
+                  suffixIcon: IconButton(
+                      icon: widget.eyeIcon(model.obscureText),
+                      onPressed: model.toggle)))
+          .padding(0, 0, 0, 40),
       [
         Expanded(
             child: ElevatedButton(

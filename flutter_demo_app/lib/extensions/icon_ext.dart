@@ -19,7 +19,7 @@ extension IconExt on Widget {
 
   Widget eyeIcon(bool obscureText) {
     return Icon(
-      obscureText ? Icons.visibility : Icons.visibility_off,
+      obscureText ? Icons.visibility_off : Icons.visibility,
       color: ColorHelper.black,
     );
   }
