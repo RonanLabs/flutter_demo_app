@@ -7,7 +7,7 @@ extension ScaffoldExt on Widget {
     return Scaffold(body: safeArea());
   }
 
-  Widget transparentScaffoldWithAppBar() {
-    return Scaffold(appBar: transparentAppBar(), body: safeArea());
+  Scaffold appBarScaffold(AppBar appBar) {
+    return Scaffold(appBar: appBar, body: safeArea());
   }
 }

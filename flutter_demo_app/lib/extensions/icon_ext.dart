@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_app/helpers/color_helper.dart';
 
 extension IconExt on Widget {
-  Widget cameraIcon() {
-    return Icon(
+  Icon cameraIcon(BuildContext context) {
+    return const Icon(
       Icons.camera_alt,
-      color: ColorHelper.white,
+      color: Colors.white,
     );
   }
 
-  Widget homeIcon() {
+  Icon homeIcon(BuildContext context, double size) {
     return Icon(
       Icons.home,
-      size: 100,
-      color: ColorHelper.blue,
+      size: size,
+      color: Theme.of(context).colorScheme.primary,
     );
   }
 
-  Widget eyeIcon(bool obscureText) {
+  Icon eyeIcon(bool obscureText) {
     return Icon(
       obscureText ? Icons.visibility_off : Icons.visibility,
-      color: ColorHelper.black,
     );
   }
 }

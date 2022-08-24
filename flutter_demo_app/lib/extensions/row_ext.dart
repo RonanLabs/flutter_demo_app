@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 extension RowExt on List<Widget> {
-  Widget row() {
+  Row row() {
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: this,

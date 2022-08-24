@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo_app/helpers/color_helper.dart';
 
 extension AppBarExt on Widget {
   appBar(String title) {
-    return AppBar(
-      title: Text(title),
-    );
+    return AppBar(title: Text(title));
   }
 
-  transparentAppBar() {
+  transparentAppBar(BuildContext context) {
     return AppBar(
-        backgroundColor: ColorHelper.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(color: ColorHelper.black));
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      iconTheme:
+          IconThemeData(color: Theme.of(context).textTheme.subtitle1?.color),
+    );
   }
 }

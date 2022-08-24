@@ -5,6 +5,7 @@ import 'package:flutter_demo_app/views/app/app_route_delegate.dart';
 import 'package:flutter_demo_app/views/app/app_route_parser.dart';
 import 'package:flutter_demo_app/view_models/blog_view_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
@@ -24,6 +25,13 @@ class App extends StatelessWidget {
         ],
         child: MaterialApp.router(
           title: 'Flutter Demo',
+          theme: ThemeData(
+              brightness: Brightness.light,
+              fontFamily: GoogleFonts.poppins().fontFamily),
+          darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              fontFamily: GoogleFonts.poppins().fontFamily),
+          themeMode: ThemeMode.light,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           routeInformationParser: AppRouteParser(),
