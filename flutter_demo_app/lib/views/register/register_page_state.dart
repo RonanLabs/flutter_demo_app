@@ -39,7 +39,7 @@ class RegisterPageState extends State<RegisterPage> {
         alignment: const AlignmentDirectional(1, 1),
         children: [
           context.imageCircleAvatar(50.0, PlaceholderHelper.personalImage),
-          context.iconCircleAvatar(20.0, context.cameraIcon(), () {})
+          context.iconCircleAvatar(context.cameraIcon(), () {})
         ],
       ),
       widget.selfSizedBox(40.0),
