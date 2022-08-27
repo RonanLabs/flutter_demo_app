@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-extension IconExt on Widget {
-  Icon cameraIcon(BuildContext context) {
+extension IconExt on BuildContext {
+  Icon cameraIcon() {
     return const Icon(
       Icons.camera_alt,
       color: Colors.white,
     );
   }
 
-  Icon homeIcon(BuildContext context, double size) {
+  Icon homeIcon() {
     return Icon(
       Icons.home,
-      size: size,
-      color: Theme.of(context).colorScheme.primary,
+      size: 100.0,
+      color: Theme.of(this).colorScheme.primary,
     );
   }
 

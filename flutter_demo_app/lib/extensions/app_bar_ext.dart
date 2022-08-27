@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-extension AppBarExt on Widget {
+extension AppBarExt on BuildContext {
   appBar(String title) {
     return AppBar(title: Text(title));
   }
 
-  transparentAppBar(BuildContext context) {
+  backButtonAppBar() {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      iconTheme:
-          IconThemeData(color: Theme.of(context).textTheme.subtitle1?.color),
+      iconTheme: IconThemeData(
+          color: Theme.of(this).brightness == Brightness.light
+              ? Colors.black
+              : Colors.white),
     );
   }
 }
